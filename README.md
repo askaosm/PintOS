@@ -1,4 +1,4 @@
-# PintOS Projects 
+# Pintos Projects
 
 This repository contains a series of projects for the Pintos operating system, which is designed for instructional purposes and runs on the 80x86 architecture. The projects build upon each other, adding features and complexity to the Pintos OS.
 
@@ -13,13 +13,18 @@ Project 1 focuses on enhancing the Pintos operating system by implementing argum
 - **System Call Handler**: Implement `syscall_handler()` to handle system calls.
 - **System Call Implementation**: Implement system calls such as `exec()`, `exit()`, `write()`, `read()`, `wait()`, and `halt`. Additional system calls will be added later.
 
-## Project 2: [Placeholder for Project 2 Title]
+## Project 2: File System Calls
 
 ### Overview
-[Placeholder for Project 2 overview]
+Project 2 involves implementing system calls related to the file system in Pintos. This project requires understanding the base file system provided by Pintos and interfacing with the file system code.
 
 ### Features
-[Placeholder for Project 2 features]
+- **File System System Calls**: Implement system calls for file operations including `create`, `remove`, `open`, `close`, `filesize`, `read`, `write`, `seek`, and `tell`.
+- **Base File System Understanding**: Gain familiarity with Pintos' file system by exploring `filesys.h` and `file.h` in the `filesys/` directory.
+- **File System Call Implementation**: No need to modify the file system code. The focus is on implementing system calls that interface with the existing file system.
+
+### Critical Section Issue
+- The project addresses unresolved critical section issues from previous implementations.
 
 ## Project 3: [Placeholder for Project 3 Title]
 
@@ -29,3 +34,30 @@ Project 1 focuses on enhancing the Pintos operating system by implementing argum
 ### Features
 [Placeholder for Project 3 features]
 
+---
+
+For each project, please refer to the specific sections for detailed instructions and requirements. This repository serves as a guide and framework for completing the Pintos projects.
+
+## Project 3: Alarm Clock and Priority Scheduling
+
+### Overview
+Project 3 introduces enhancements to the Pintos operating system by improving the efficiency of the alarm clock and implementing priority scheduling.
+
+### Features
+
+#### Alarm Clock
+- **Efficient Sleeping**: Modify `timer_sleep()` to avoid inefficiency. Instead of cycling between RUNNING and READY states, block the thread if the "ticks" are not yet passed.
+- **Thread Management**: Implement a new queue to manage threads that are sleeping, saving their wake-up time.
+- **Wake-up Mechanism**: Utilize `timer_interrupt()` to wake up threads whose sleep duration has elapsed and insert them back into the ready queue.
+
+#### Priority Scheduling
+- **Priority-Based Scheduling**: Transition from round-robin scheduling to a priority-based approach, where threads are selected based on their priority.
+- **Immediate Yielding**: When a new thread with higher priority than the current running thread arrives, the current thread immediately yields the CPU.
+- **Aging Technique**: Implement aging to prevent starvation of low-priority processes. Increase priority over time to ensure fairness.
+
+### Challenges
+- **Advanced Scheduler**: The implementation of an advanced scheduler considering thread aging was not completed. The aging technique is activated only when the Pintos kernel receives the '-aging' option and sets the aging flag to TRUE.
+
+---
+
+For each project, specific details and implementation guidelines are provided. This repository serves as a comprehensive guide for completing the Pintos projects.
