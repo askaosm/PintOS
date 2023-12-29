@@ -24,19 +24,8 @@ Project 2 involves implementing system calls related to the file system in Pinto
 - **File System Call Implementation**: No need to modify the file system code. The focus is on implementing system calls that interface with the existing file system.
 
 ### Critical Section Issue
-- The project addresses unresolved critical section issues from previous implementations.
+- **Unresolved Critical Sections**: Despite progress in file system calls, critical section issues remain unresolved in Project 2. These issues require further attention to ensure system stability and efficiency.
 
-## Project 3: [Placeholder for Project 3 Title]
-
-### Overview
-[Placeholder for Project 3 overview]
-
-### Features
-[Placeholder for Project 3 features]
-
----
-
-For each project, please refer to the specific sections for detailed instructions and requirements. This repository serves as a guide and framework for completing the Pintos projects.
 
 ## Project 3: Alarm Clock and Priority Scheduling
 
@@ -58,6 +47,3 @@ Project 3 introduces enhancements to the Pintos operating system by improving th
 ### Challenges
 - **Advanced Scheduler**: The implementation of an advanced scheduler considering thread aging was not completed. The aging technique is activated only when the Pintos kernel receives the '-aging' option and sets the aging flag to TRUE.
 
----
-
-For each project, specific details and implementation guidelines are provided. This repository serves as a comprehensive guide for completing the Pintos projects.
